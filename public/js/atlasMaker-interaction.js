@@ -681,11 +681,13 @@ var AtlasMakerInteraction = {
                 break;
             case 'eyedrop':
                 var value = me.eyedrop( x,y,me.User );
-                var index = me.ontology.valueToIndex[ value ];
-                var selRegionName = me.ontology.labels[ index ].name;
-                me.info.region = selRegionName;
-                me.changePenColor( index );
-                var selRegionColor = me.ontology.labels[ index ].color;
+                if (value) {
+                        var index = me.ontology.valueToIndex[ value ];
+                        var selRegionName = me.ontology.labels[ index ].name;
+                        me.info.region = selRegionName;
+                        me.changePenColor( index );
+                        var selRegionColor = me.ontology.labels[ index ].color;
+                }
                 break;
         }
     
